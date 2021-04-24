@@ -7,9 +7,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 class EmployeeList extends React.Component {
     state = {
-        allEmployees: [{}],
+        allEmployees: [],
         search: "",
-        filteredEmployees: [{}],
+        filteredEmployees: [],
         loaded: false
     };
     
@@ -47,39 +47,39 @@ class EmployeeList extends React.Component {
     };
 
     employeesSortedByFName =() => {
-        const sortByFName = this.state.allEmployees.sort((one, two) => {
-            one.name.first.localeCompare(two.name.first);
-            this.setState({
-                allEmployees: sortByFName
-            })
-        })
+        const sortByFName = this.state.allEmployees.sort((one, two) => 
+            one.name.first.localeCompare(two.name.first)
+        );
+        this.setState({
+            allEmployees: sortByFName
+        });
     };
 
     employeesSortedByLName =() => {
-        const sortByLName = this.state.allEmployees.sort((one, two) => {
-            one.name.last.localeCompare(two.name.last);
-            this.setState({
-                allEmployees: sortByLName
-            })
-        })
+        const sortByLName = this.state.allEmployees.sort((one, two) => 
+            one.name.last.localeCompare(two.name.last)    
+        );
+        this.setState({
+            allEmployees: sortByLName
+        });
     };
 
     employeesSortedByEmail =() => {
-        const sortByEmail = this.state.allEmployees.sort((one, two) => {
-            one.email.localeCompare(two.email);
-            this.setState({
-                allEmployees: sortByEmail
-            })
-        })
+        const sortByEmail = this.state.allEmployees.sort((one, two) => 
+            one.email.localeCompare(two.email)      
+        );
+        this.setState({
+            allEmployees: sortByEmail
+        });
     };
 
     employeesSortedByPhone =() => {
-        const sortByPhone = this.state.allEmployees.sort((one, two) => {
-            one.phone.localeCompare(two.phone);
-            this.setState({
-                allEmployees: sortByPhone
-            })
-        })
+        const sortByPhone = this.state.allEmployees.sort((one, two) => 
+            one.phone.localeCompare(two.phone)            
+        );
+        this.setState({
+            allEmployees: sortByPhone
+        });
     };
 
     render() {
@@ -87,13 +87,12 @@ class EmployeeList extends React.Component {
             <div>
                 <Search handleInputChange={ this.handleInputChange } />
                 {this.state.loaded ?
-                <Table 
-                
-                results={ this.state.filteredEmployees } 
-                sortByFName={this.sortByFName} 
-                sortByLName={this.sortByLName} 
-                sortByEmail={this.sortByEmail} 
-                sortByPhone={this.sortByPhone} 
+                <Table                 
+                employeesSortedByFName = { this.employeesSortedByFName } 
+                employeesSortedByLName = { this.employeesSortedByLName } 
+                employeesSortedByEmail = { this.employeesSortedByEmail } 
+                employeesSortedByPhone = { this.employeesSortedByPhone }
+                results = { this.state.filteredEmployees }
                 /> :
                 <p>Wait</p>}
             </div>

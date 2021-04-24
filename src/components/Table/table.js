@@ -8,16 +8,16 @@ function Table(props) {
                 <thead>
                     <tr className='header'>
                         <th>
-                            <button onClick={props.sortByFName}>First Name</button>
+                            <button onClick={props.employeesSortedByFName}>First Name</button>
                         </th>
                         <th>
-                            <button onClick={props.sortByLName}>Last Name</button>
+                            <button onClick={props.employeesSortedByLName}>Last Name</button>
                         </th>
                         <th>
-                            <button onClick={props.sortByEmail}>Email</button>
+                            <button onClick={props.employeesSortedByEmail}>Email</button>
                         </th>
                         <th>
-                            <button onClick={props.sortByPhone}>Phone</button>
+                            <button onClick={props.employeesSortedByPhone}>Phone</button>
                         </th>
                     </tr>
                 </thead>
