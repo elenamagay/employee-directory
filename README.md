@@ -34,6 +34,8 @@ First specify the `homepage` and add some scripts to the `package.json`:
 "deploy": "gh-pages -d build",
 ```
 Then run:
+
+<!-- this command should be run after every change to a code for updating React app -->
 ```
 npm run deploy
 ```
